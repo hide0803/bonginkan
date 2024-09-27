@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.5;
+            line-height: 1.6;
             margin: 0;
             padding: 0;
             color: #333;
@@ -18,6 +18,12 @@
             padding: 0 20px;
         }
         header {
+            background-color: #fff;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
             border-bottom: 1px solid #e5e5e5;
         }
         .header-content {
@@ -29,6 +35,8 @@
         .logo {
             display: flex;
             align-items: center;
+            text-decoration: none;
+            color: #333;
         }
         .logo-icon {
             display: flex;
@@ -56,11 +64,19 @@
             text-decoration: none;
             color: #333;
         }
+        section {
+            padding: 80px 0;
+            border-bottom: 1px solid #e5e5e5;
+        }
+        h1, h2, h3 {
+            margin-bottom: 20px;
+        }
         .hero {
             text-align: center;
-            padding: 60px 0;
+            padding: 120px 0 80px;
+            background-color: #f8f8f8;
         }
-        h1 {
+        .hero h1 {
             font-size: 2.5rem;
             margin-bottom: 20px;
         }
@@ -80,35 +96,98 @@
             border-radius: 5px;
             text-decoration: none;
             font-weight: bold;
+            transition: background-color 0.3s, color 0.3s;
         }
         .button-primary {
             background-color: #000;
             color: #fff;
+        }
+        .button-primary:hover {
+            background-color: #333;
         }
         .button-secondary {
             background-color: #fff;
             color: #000;
             border: 2px solid #000;
         }
+        .button-secondary:hover {
+            background-color: #f0f0f0;
+        }
         .services {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
-            margin-top: 60px;
         }
         .service-card {
             border: 1px solid #e5e5e5;
             border-radius: 5px;
             padding: 20px;
         }
-        .service-card h3 {
-            margin-top: 0;
+        .team-member {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        .team-member img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+        .pricing-table th, .pricing-table td {
+            border: 1px solid #e5e5e5;
+            padding: 10px;
+            text-align: left;
+        }
+        .pricing-table th {
+            background-color: #f8f8f8;
+        }
+        .case-study {
+            margin-bottom: 40px;
+            padding: 20px;
+            border: 1px solid #e5e5e5;
+            border-radius: 5px;
+        }
+        .blog-post {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e5e5e5;
+        }
+        .blog-post:last-child {
+            border-bottom: none;
+        }
+        .faq-item {
+            margin-bottom: 20px;
+        }
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #e5e5e5;
+            border-radius: 5px;
+        }
+        .form-group textarea {
+            height: 150px;
         }
         footer {
             background-color: #f8f8f8;
-            border-top: 1px solid #e5e5e5;
             padding: 40px 0;
-            margin-top: 60px;
         }
         .footer-content {
             display: grid;
@@ -140,7 +219,7 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <a href="/" class="logo">
+                <a href="#home" class="logo">
                     <div class="logo-icon">
                         <div class="logo-line"></div>
                         <div class="logo-line"></div>
@@ -150,13 +229,13 @@
                 </a>
                 <nav>
                     <ul>
-                        <li><a href="/">ホーム</a></li>
-                        <li><a href="/about">会社概要</a></li>
-                        <li><a href="/services">サービス</a></li>
-                        <li><a href="/pricing">料金プラン</a></li>
-                        <li><a href="/case-studies">導入事例</a></li>
-                        <li><a href="/blog">ブログ/ニュース</a></li>
-                        <li><a href="/contact">お問い合わせ</a></li>
+                        <li><a href="#home">ホーム</a></li>
+                        <li><a href="#about">会社概要</a></li>
+                        <li><a href="#services">サービス</a></li>
+                        <li><a href="#pricing">料金プラン</a></li>
+                        <li><a href="#case-studies">導入事例</a></li>
+                        <li><a href="#blog">ブログ/ニュース</a></li>
+                        <li><a href="#contact">お問い合わせ</a></li>
                     </ul>
                 </nav>
             </div>
@@ -164,34 +243,232 @@
     </header>
 
     <main>
-        <div class="container">
-            <section class="hero">
+        <section id="home" class="hero">
+            <div class="container">
                 <h1>AIと共に未来を創る、<br>ボンギンカン株式会社</h1>
                 <p>生成AIを通じて社会と企業の進化を加速させます</p>
                 <div class="cta-buttons">
-                    <a href="/contact" class="button button-primary">詳しい資料請求はこちら</a>
-                    <a href="/contact" class="button button-secondary">無料相談を今すぐ予約</a>
+                    <a href="#contact" class="button button-primary">詳しい資料請求はこちら</a>
+                    <a href="#contact" class="button button-secondary">無料相談を今すぐ予約</a>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <section class="services">
-                <div class="service-card">
-                    <h3>AI Agents 開発サービス「Agents Factory」</h3>
-                    <p>AIを活用し、企業のビジネス課題を解決するオーダーメイドAI開発サービス。</p>
-                    <a href="/services#agents-factory" class="button button-secondary">詳細を見る</a>
+        <section id="about">
+            <div class="container">
+                <h2>会社概要</h2>
+                <div class="about-section">
+                    <h3>ミッション・ビジョン</h3>
+                    <p>ボンギンカン株式会社は、生成AIを通じて社会と企業の進化を加速させます。私たちは、AI Agentsの開発とその社会実装を通じ、次世代のイノベーションを支援します。</p>
                 </div>
-                <div class="service-card">
-                    <h3>生成AI研修「AI Bootcamp」</h3>
-                    <p>実践的なカリキュラムで初心者から中級者までを対象とした、ビジネスで活用できるAIスキルの習得をサポート。</p>
-                    <a href="/services#ai-bootcamp" class="button button-secondary">詳細を見る</a>
+                <div class="about-section">
+                    <h3>沿革</h3>
+                    <ul>
+                        <li>2024年9月11日: 東京都に設立</li>
+                        <li>年間5億円のAIを売る、作るコンサルティング企業として成長</li>
+                        <li>生成AI分野で上場企業と提携、AIソリューションの提供を開始</li>
+                    </ul>
                 </div>
-                <div class="service-card">
-                    <h3>AIコミュニティ「AI Bootcamp BUSINESS部」</h3>
-                    <p>最新AI技術を共有し、メンバー同士が学び合い、成長できるディスカッションの場を提供。</p>
-                    <a href="/services#ai-community" class="button button-secondary">詳細を見る</a>
+                <div class="about-section">
+                    <h3>チーム紹介</h3>
+                    <div class="team-member">
+                        <img src="/placeholder.svg?height=100&width=100" alt="坪内 弘毅">
+                        <div>
+                            <h4>代表取締役CEO 坪内 弘毅</h4>
+                            <p>AIコンサルタントとして業界トップの実績を持ち、1000人以上を指導。</p>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <img src="/placeholder.svg?height=100&width=100" alt="小林 秀年">
+                        <div>
+                            <h4>代表取締役COO 小林 秀年</h4>
+                            <p>AI教育やコミュニティ運営に精通し、ビジネスと技術の橋渡し役。</p>
+                        </div>
+                    </div>
                 </div>
-            </section>
-        </div>
+            </div>
+        </section>
+
+        <section id="services">
+            <div class="container">
+                <h2>サービス紹介</h2>
+                <div class="services">
+                    <div class="service-card">
+                        <h3>AI Agents 開発サービス「Agents Factory」</h3>
+                        <p>AI Agents開発を通じて、企業の業務効率化や社会課題解決に貢献。プロトタイプから社会実装までのフルサポートを提供。</p>
+                        <p><strong>特徴:</strong> 1週間のプロトタイプ提案から開始し、最短でビジネスにAIを導入可能。</p>
+                        <p><strong>主な機能:</strong> SNS AI BOT、AIアバター、業務自動化ツール</p>
+                        <p><strong>導入の流れ:</strong> 要件定義 → プロトタイピング → 設計 → コーディング → テスト → リリース</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>生成AI研修「AI Bootcamp」</h3>
+                        <p>初心者から中級者向けの実践型研修。生成AIプロンプト、Difyを活用したアプリ開発、AI営業スキルを習得。</p>
+                        <p><strong>対象者:</strong> 新入社員、若手社員、中堅社員</p>
+                        <p><strong>カリキュラム:</strong> 基礎コース（プロンプト研修、Difyアプリ開発）、応用コース（BPO事業構築、AI営業）</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>AIコミュニティ「AI Bootcamp BUSINESS部」</h3>
+                        <p>100名以上が参加するAIに特化したディスカッションとコラボの場。</p>
+                        <p><strong>メンバーシップ特典:</strong> 専門家によるAI技術セミナー、オフラインイベント、技術研究の分科会</p>
+                        <p><strong>活動内容:</strong> 技術トレンドの研究、AIメンターによる指導、メンバー同士のコラボプロジェクト</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing">
+            <div class="container">
+                <h2>料金プラン</h2>
+                <h3>Agents Factory</h3>
+                <table class="pricing-table">
+                    <tr>
+                        <th>サービス</th>
+                        <th>料金</th>
+                    </tr>
+                    <tr>
+                        <td>プロトタイピング</td>
+                        <td>333万円～</td>
+                    </tr>
+                    <tr>
+                        <td>ローカル環境導入</td>
+                        <td>555万円～</td>
+                    </tr>
+                    <tr>
+                        <td>社会実装</td>
+                        <td>1111万円～</td>
+                    </tr>
+                </table>
+
+                <h3>AI Bootcamp</h3>
+                <table class="pricing-table">
+                    <tr>
+                        <th>コース</th>
+                        <th>料金</th>
+                    </tr>
+                    <tr>
+                        <td>基礎コース</td>
+                        <td>50万円～</td>
+                    </tr>
+                    <tr>
+                        <td>応用コース</td>
+                        <td>100万円～</td>
+                    </tr>
+                </table>
+
+                <h3>コミュニティメンバーシップ</h3>
+                <table class="pricing-table">
+                    <tr>
+                        <th>プラン</th>
+                        <th>料金</th>
+                    </tr>
+                    <tr>
+                        <td>月額</td>
+                        <td>29,800円</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <section id="case-studies">
+            <div class="container">
+                <h2>導入事例</h2>
+                <div class="case-study">
+                    <h3>大手製造業A社</h3>
+                    <p>業務自動化にAI Agentsを導入し、業務効率を30%向上。</p>
+                    <h4>課題</h4>
+                    <p>複雑な製造プロセスの管理と効率化</p>
+                    <h4>解決策</h4>
+                    <p>AI Agentsを活用した自動化システムの導入</p>
+                    <h4>結果</h4>
+                    <p>業務効率が30%向上し、人的ミスも大幅に減少</p>
+                </div>
+                <div class="case-study">
+                    <h3>BPO事業C社</h3>
+                    <p>AIを活用したBPO事業の構築を支援し、業務コストを50%削減。</p>
+                    <h4>課題</h4>
+                    <p>人手に依存する業務プロセスのコスト削減と効率化</p>
+                    <h4>解決策</h4>
+                    <p>AI Bootcampを通じた社内AI人材の育成とAI Agentsの導入</p>
+                    <h4>結果</h4>
+                    <p>業務コストを50%削減し、処理速度も2倍に向上</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="blog">
+            <div class="container">
+                <h2>ブログ/ニュース</h2>
+                <article class="blog-post">
+                    <h3>生成AIの未来を探る</h3>
+                    <p>投稿日: 2024年9月15日</p>
+                    <p>生成AIの最新トレンドと今後の展望について、当社のエキスパートが解説します。企業がどのようにして生成AIを活用し、ビジネスを変革できるのかを探ります。</p>
+                    <a href="#" class="button button-secondary">続きを読む</a>
+                </article>
+                <article class="blog-post">
+                    <h3>AIトレンドセミナー2024開催レポート</h3>
+                    <p>投稿日: 2024年9月5日</p>
+                    <p>先日開催されたAIトレンドセミナー2024の様子をお伝えします。業界のリーダーたちが語る、最新のAI技術とその応用例をまとめました。</p>
+                    <a href="#" class="button button-secondary">続きを読む</a>
+                </article>
+                <article class="blog-post">
+                    <h3>AI Bootcampコミュニティメンバーの成功事例紹介</h3>
+                    <p>投稿日: 2024年8月25日</p>
+                    <p>AI Bootcampに参加したメンバーが、学んだスキルを活かして実際のビジネスでどのような成果を上げたのか、具体的な事例を紹介します。</p>
+                    <a href="#" class="button button-secondary">続きを読む</a>
+                </article>
+            </div>
+        </section>
+
+        <section id="faq">
+            <div class="container">
+                <h2>よくある質問 (FAQ)</h2>
+                <div class="faq-item">
+                    <h3>Q: AI Agentsの導入にはどれくらいの期間がかかりますか？</h3>
+                    <p>A: プロトタイピングは1週間、導入までに3〜6ヶ月です。具体的な期間は、プロジェクトの規模や複雑さによって異なります。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Q: 生成AIの研修は初心者でも参加できますか？</h3>
+                    <p>A: はい、初心者からでも参加できる実践型のプログラムです。基礎から応用まで、段階的に学べるカリキュラムを用意しています。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Q: AIコミュニティに参加するメリットは何ですか？</h3>
+                    <p>A: 最新のAI技術トレンドの学習、専門家からの直接指導、他の参加者とのネットワーキングなど、AI分野でのスキルアップと人脈形成が可能です。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Q: 料金プランのカスタマイズは可能ですか？</h3>
+                    <p>A: はい、お客様のニーズに合わせてカスタマイズが可能です。具体的な要望をお聞かせください。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2>お問い合わせ</h2>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">お名前</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">メールアドレス</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="company">会社名</label>
+                        <input type="text" id="company" name="company">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">件名</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">メッセージ</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="button button-primary">送信</button>
+                </form>
+            </div>
+        </section>
     </main>
 
     <footer>
@@ -200,25 +477,25 @@
                 <div class="footer-section">
                     <h4>会社情報</h4>
                     <ul>
-                        <li><a href="/about">会社概要</a></li>
-                        <li><a href="/privacy-policy">プライバシーポリシー</a></li>
-                        <li><a href="/terms-of-service">利用規約</a></li>
+                        <li><a href="#about">会社概要</a></li>
+                        <li><a href="#privacy-policy">プライバシーポリシー</a></li>
+                        <li><a href="#terms-of-service">利用規約</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>サービス</h4>
                     <ul>
-                        <li><a href="/services#agents-factory">Agents Factory</a></li>
-                        <li><a href="/services#ai-bootcamp">AI Bootcamp</a></li>
-                        <li><a href="/services#ai-community">AIコミュニティ</a></li>
+                        <li><a href="#services">Agents Factory</a></li>
+                        <li><a href="#services">AI Bootcamp</a></li>
+                        <li><a href="#services">AIコミュニティ</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>リソース</h4>
                     <ul>
-                        <li><a href="/blog">ブログ</a></li>
-                        <li><a href="/case-studies">導入事例</a></li>
-                        <li><a href="/faq">FAQ</a></li>
+                        <li><a href="#blog">ブログ</a></li>
+                        <li><a href="#case-studies">導入事例</a></li>
+                        <li><a href="#faq">FAQ</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -236,5 +513,17 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
