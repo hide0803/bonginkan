@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ボンギンカン株式会社 - AIと共に未来を創る</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.5;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            border-bottom: 1px solid #e5e5e5;
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo-icon {
+            display: flex;
+            margin-right: 10px;
+        }
+        .logo-line {
+            width: 8px;
+            height: 32px;
+            background-color: #000;
+            margin-right: 4px;
+        }
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        nav ul {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            margin-left: 20px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+        .hero {
+            text-align: center;
+            padding: 60px 0;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 1.25rem;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .button-primary {
+            background-color: #000;
+            color: #fff;
+        }
+        .button-secondary {
+            background-color: #fff;
+            color: #000;
+            border: 2px solid #000;
+        }
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+        .service-card {
+            border: 1px solid #e5e5e5;
+            border-radius: 5px;
+            padding: 20px;
+        }
+        .service-card h3 {
+            margin-top: 0;
+        }
+        footer {
+            background-color: #f8f8f8;
+            border-top: 1px solid #e5e5e5;
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+        .footer-section h4 {
+            margin-top: 0;
+        }
+        .footer-section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+        .footer-section ul li a {
+            text-decoration: none;
+            color: #666;
+        }
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">
+                    <div class="logo-icon">
+                        <div class="logo-line"></div>
+                        <div class="logo-line"></div>
+                        <div class="logo-line"></div>
+                    </div>
+                    <span class="logo-text">ボンギンカン</span>
+                </a>
+                <nav>
+                    <ul>
+                        <li><a href="/">ホーム</a></li>
+                        <li><a href="/about">会社概要</a></li>
+                        <li><a href="/services">サービス</a></li>
+                        <li><a href="/pricing">料金プラン</a></li>
+                        <li><a href="/case-studies">導入事例</a></li>
+                        <li><a href="/blog">ブログ/ニュース</a></li>
+                        <li><a href="/contact">お問い合わせ</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="hero">
+                <h1>AIと共に未来を創る、<br>ボンギンカン株式会社</h1>
+                <p>生成AIを通じて社会と企業の進化を加速させます</p>
+                <div class="cta-buttons">
+                    <a href="/contact" class="button button-primary">詳しい資料請求はこちら</a>
+                    <a href="/contact" class="button button-secondary">無料相談を今すぐ予約</a>
+                </div>
+            </section>
+
+            <section class="services">
+                <div class="service-card">
+                    <h3>AI Agents 開発サービス「Agents Factory」</h3>
+                    <p>AIを活用し、企業のビジネス課題を解決するオーダーメイドAI開発サービス。</p>
+                    <a href="/services#agents-factory" class="button button-secondary">詳細を見る</a>
+                </div>
+                <div class="service-card">
+                    <h3>生成AI研修「AI Bootcamp」</h3>
+                    <p>実践的なカリキュラムで初心者から中級者までを対象とした、ビジネスで活用できるAIスキルの習得をサポート。</p>
+                    <a href="/services#ai-bootcamp" class="button button-secondary">詳細を見る</a>
+                </div>
+                <div class="service-card">
+                    <h3>AIコミュニティ「AI Bootcamp BUSINESS部」</h3>
+                    <p>最新AI技術を共有し、メンバー同士が学び合い、成長できるディスカッションの場を提供。</p>
+                    <a href="/services#ai-community" class="button button-secondary">詳細を見る</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>会社情報</h4>
+                    <ul>
+                        <li><a href="/about">会社概要</a></li>
+                        <li><a href="/privacy-policy">プライバシーポリシー</a></li>
+                        <li><a href="/terms-of-service">利用規約</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>サービス</h4>
+                    <ul>
+                        <li><a href="/services#agents-factory">Agents Factory</a></li>
+                        <li><a href="/services#ai-bootcamp">AI Bootcamp</a></li>
+                        <li><a href="/services#ai-community">AIコミュニティ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>リソース</h4>
+                    <ul>
+                        <li><a href="/blog">ブログ</a></li>
+                        <li><a href="/case-studies">導入事例</a></li>
+                        <li><a href="/faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>お問い合わせ</h4>
+                    <p>
+                        〒000-0000<br>
+                        東京都○○区○○1-1-1<br>
+                        電話: 03-1234-5678<br>
+                        メール: info@bonginkhan.co.jp
+                    </p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 ボンギンカン株式会社. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
